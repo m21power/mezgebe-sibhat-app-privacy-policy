@@ -1,1 +1,0 @@
-# mezgebe-sibhat-app-privacy-policy
