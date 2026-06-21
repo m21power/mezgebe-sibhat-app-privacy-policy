@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — መዝገበ ስብሐት</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&family=Noto+Serif+Ethiopic:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ── Token System ─────────────────────────────────────────── */
+      :root {
+        --ink: #1a1209;
+        --parchment: #f5efe0;
+        --parchment2: #ede4cc;
+        --gold: #b8860b;
+        --gold-light: #d4a832;
+        --crimson: #7b1c1c;
+        --crimson-dim: #a33030;
+        --rule: #c8a84b;
+        --muted: #5c4a2a;
+        --white: #fdfaf3;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--parchment);
+        color: var(--ink);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 18px;
+        line-height: 1.75;
+        min-height: 100vh;
+      }
+
+      /* ── Cross ornament (SVG inline) ──────────────────────────── */
+      .cross-ornament {
+        display: block;
+        margin: 0 auto;
+        width: 52px;
+        height: 52px;
+        opacity: 0.85;
+      }
+
+      /* ── Header ───────────────────────────────────────────────── */
+      header {
+        background: var(--crimson);
+        color: var(--white);
+        text-align: center;
+        padding: 3.5rem 1.5rem 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Geometric border pattern at top and bottom of header */
+      header::before,
+      header::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: repeating-linear-gradient(
+          90deg,
+          var(--gold) 0px,
+          var(--gold) 12px,
+          var(--crimson) 12px,
+          var(--crimson) 24px,
+          var(--gold-light) 24px,
+          var(--gold-light) 36px,
+          var(--crimson) 36px,
+          var(--crimson) 48px
+        );
+      }
+      header::before {
+        top: 0;
+      }
+      header::after {
+        bottom: 0;
+      }
+
+      .header-cross {
+        margin-bottom: 1.25rem;
+      }
+
+      .app-name-ge-ez {
+        font-family: "Noto Serif Ethiopic", serif;
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        color: var(--gold-light);
+        line-height: 1.2;
+        display: block;
+      }
+
+      .app-name-latin {
+        font-family: "IM Fell English", serif;
+        font-style: italic;
+        font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+        color: rgba(253, 250, 243, 0.7);
+        letter-spacing: 0.12em;
+        display: block;
+        margin-top: 0.35rem;
+      }
+
+      .page-title {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 300;
+        font-size: clamp(1rem, 3vw, 1.35rem);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--parchment);
+        margin-top: 1.5rem;
+      }
+
+      .effective-date {
+        font-size: 0.85rem;
+        color: rgba(253, 250, 243, 0.55);
+        margin-top: 0.5rem;
+        letter-spacing: 0.08em;
+      }
+
+      /* ── Layout ───────────────────────────────────────────────── */
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 5rem;
+      }
+
+      /* ── Gold rule divider ────────────────────────────────────── */
+      .rule {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 2.5rem 0;
+      }
+      .rule::before,
+      .rule::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--rule),
+          transparent
+        );
+      }
+      .rule-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      /* ── Intro block ──────────────────────────────────────────── */
+      .intro {
+        background: var(--white);
+        border-left: 4px solid var(--gold);
+        padding: 1.5rem 1.75rem;
+        border-radius: 0 6px 6px 0;
+        font-size: 1.05rem;
+        color: var(--muted);
+        font-style: italic;
+        line-height: 1.8;
+      }
+
+      /* ── Sections ─────────────────────────────────────────────── */
+      section {
+        margin-bottom: 0;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+        margin-top: 2.75rem;
+      }
+
+      .section-number {
+        font-family: "IM Fell English", serif;
+        font-style: italic;
+        font-size: 0.8rem;
+        color: var(--gold);
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: clamp(1.1rem, 3vw, 1.4rem);
+        color: var(--crimson);
+        letter-spacing: 0.02em;
+        line-height: 1.3;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        color: #2e200a;
+      }
+
+      /* ── Highlight pill (replaces bold emphasis) ──────────────── */
+      strong {
+        color: var(--crimson);
+        font-weight: 600;
+      }
+
+      /* ── Bullet list ──────────────────────────────────────────── */
+      ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0.75rem 0 1rem;
+      }
+
+      ul li {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
+        padding: 0.4rem 0;
+        font-size: 1rem;
+        color: #2e200a;
+      }
+
+      ul li::before {
+        content: "✦";
+        color: var(--gold);
+        font-size: 0.6rem;
+        margin-top: 0.45rem;
+        flex-shrink: 0;
+      }
+
+      /* ── Third-party cards ────────────────────────────────────── */
+      .service-grid {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .service-card {
+        background: var(--white);
+        border: 1px solid var(--parchment2);
+        border-top: 3px solid var(--gold);
+        border-radius: 6px;
+        padding: 1.25rem 1.5rem;
+      }
+
+      .service-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: var(--crimson);
+        margin-bottom: 0.4rem;
+      }
+
+      .service-card p {
+        font-size: 0.92rem;
+        color: var(--muted);
+        margin-bottom: 0.6rem;
+      }
+
+      .service-card a {
+        font-size: 0.85rem;
+        color: var(--gold);
+        text-underline-offset: 3px;
+        text-decoration: underline;
+      }
+      .service-card a:hover {
+        color: var(--crimson);
+      }
+
+      /* ── Contact block ────────────────────────────────────────── */
+      .contact-block {
+        background: var(--crimson);
+        color: var(--parchment);
+        border-radius: 8px;
+        padding: 2rem 2rem;
+        text-align: center;
+        margin-top: 3rem;
+      }
+
+      .contact-block h2 {
+        color: var(--gold-light);
+        margin-bottom: 0.75rem;
+      }
+
+      .contact-block p {
+        color: rgba(245, 239, 224, 0.8);
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      .contact-block a {
+        color: var(--gold-light);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid var(--gold);
+        padding-bottom: 1px;
+      }
+      .contact-block a:hover {
+        color: white;
+        border-color: white;
+      }
+
+      /* ── Footer ───────────────────────────────────────────────── */
+      footer {
+        background: var(--ink);
+        color: rgba(245, 239, 224, 0.45);
+        text-align: center;
+        padding: 1.75rem 1rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+      }
+
+      footer .footer-name {
+        font-family: "Noto Serif Ethiopic", serif;
+        color: var(--gold);
+        margin-right: 0.4rem;
+      }
+
+      /* ── Responsive ───────────────────────────────────────────── */
+      @media (min-width: 560px) {
+        .service-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══ HEADER ══════════════════════════════════════════════════ -->
+    <header>
+      <div class="header-cross">
+       
+          <rect x="22" y="4" width="8" height="44" rx="1" fill="#d4a832" />
+          <rect x="4" y="22" width="44" height="8" rx="1" fill="#d4a832" />
+          <rect x="19" y="1" width="14" height="4" rx="1" fill="#d4a832" />
+          <rect x="1" y="19" width="4" height="14" rx="1" fill="#d4a832" />
+          <rect x="47" y="19" width="4" height="14" rx="1" fill="#d4a832" />
+          <rect x="19" y="47" width="14" height="4" rx="1" fill="#d4a832" />
+          <!-- corner diamonds -->
+          <rect
+            x="14"
+            y="14"
+            width="6"
+            height="6"
+            rx="1"
+            transform="rotate(45 17 17)"
+            fill="#d4a832"
+            opacity="0.7"
+          />
+          <rect
+            x="32"
+            y="14"
+            width="6"
+            height="6"
+            rx="1"
+            transform="rotate(45 35 17)"
+            fill="#d4a832"
+            opacity="0.7"
+          />
+          <rect
+            x="14"
+            y="32"
+            width="6"
+            height="6"
+            rx="1"
+            transform="rotate(45 17 35)"
+            fill="#d4a832"
+            opacity="0.7"
+          />
+          <rect
+            x="32"
+            y="32"
+            width="6"
+            height="6"
+            rx="1"
+            transform="rotate(45 35 35)"
+            fill="#d4a832"
+            opacity="0.7"
+          />
+        </svg>
+      </div>
+
+      <span class="app-name-ge-ez">መዝገበ ስብሐት</span>
+      <span class="app-name-latin">Mäzgäbä Sibḥat</span>
+      <p class="page-title">Privacy Policy</p>
+      <p class="effective-date">Effective Date: April 13, 2026</p>
+    </header>
+
+    <!-- ══ MAIN ════════════════════════════════════════════════════ -->
+    <main>
+      <div class="intro">
+        Your privacy is important to us. This policy explains clearly and
+        honestly how <strong>መዝገበ ስብሐት</strong> — an educational application
+        rooted in the sacred teachings of the Ethiopian Orthodox Tewahedo Church
+        — handles information on your device.
+      </div>
+
+      <div class="rule"><div class="rule-dot"></div></div>
+
+      <!-- §1 -->
+      <section>
+        <div class="section-header">
+          <span class="section-number">§ 1</span>
+          <h2>Information Collection &amp; Use</h2>
+        </div>
+        <p>
+          The App itself
+          <strong>does not collect or store personal data</strong> such as your
+          name, email address, or phone number. However, the App uses
+          third-party services that may collect information used to identify you
+          and your device for advertising and analytics purposes.
+        </p>
+      </section>
+
+      <!-- §2 -->
+      <section>
+        <div class="section-header">
+          <span class="section-number">§ 2</span>
+          <h2>Access to Media Files</h2>
+        </div>
+        <p>
+          The App
+          <strong
+            >does not access your photos or videos without your consent</strong
+          >. When you use features that require an image — such as reporting a
+          bug — the App uses the system picker exclusively.
+        </p>
+        <ul>
+          <li>
+            The App accesses the selected file
+            <strong>only temporarily</strong> for that specific action.
+          </li>
+          <li>
+            The App does <strong>not request broad access</strong> to your
+            entire media library.
+          </li>
+          <li>
+            Images selected for bug reports are transmitted to our support team
+            to help resolve technical issues.
+          </li>
+        </ul>
+      </section>
+
+      <!-- §3 -->
+      <section>
+        <div class="section-header">
+          <span class="section-number">§ 3</span>
+          <h2>App Content &amp; Local Storage</h2>
+        </div>
+        <p>
+          All audio and text content provided in the App is for educational and
+          devotional purposes.
+        </p>
+        <ul>
+          <li>
+            Audio files may be <strong>cached locally on your device</strong> to
+            allow offline access.
+          </li>
+          <li>
+            App preferences and theme settings are stored
+            <strong>locally on your device only</strong> and are never
+            transmitted to us.
+          </li>
+        </ul>
+      </section>
+
+      <!-- §4 -->
+      <section>
+        <div class="section-header">
+          <span class="section-number">§ 4</span>
+          <h2>Third-Party Services &amp; Advertising</h2>
+        </div>
+        <p>
+          The App uses third-party services that may collect data to display
+          advertisements and analyze app performance. These providers operate
+          under their own privacy policies.
+        </p>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <h3>Google AdMob</h3>
+            <p>
+              Displays advertisements. Google may use the
+              <strong>Advertising ID (AAID)</strong> from your device to
+              personalize ads and measure performance. You can manage your ad
+              preferences in your device settings.
+            </p>
+            <a
+              href="https://support.google.com/admob/answer/6128543?hl=en"
+              target="_blank"
+              rel="noopener"
+              >AdMob Privacy Policy ↗</a
+            >
+          </div>
+          <div class="service-card">
+            <h3>Google Play Services</h3>
+            <p>
+              Used for core app functionality and maintenance. Ensures the App
+              runs reliably on Android devices.
+            </p>
+            <a
+              href="https://www.google.com/policies/privacy/"
+              target="_blank"
+              rel="noopener"
+              >Google Privacy Policy ↗</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- §5 -->
+      <section>
+        <div class="section-header">
+          <span class="section-number">§ 5</span>
+          <h2>Data Security</h2>
+        </div>
+        <p>
+          We value your trust. While the App does not collect personal
+          identifiers, we use industry-standard SDKs that implement security
+          measures to protect any data processed for advertising and app
+          stability.
+        </p>
+      </section>
+
+      <!-- §6 -->
+      <section>
+        <div class="section-header">
+          <span class="section-number">§ 6</span>
+          <h2>Changes to This Policy</h2>
+        </div>
+        <p>
+          We may update this Privacy Policy from time to time. Any changes will
+          be posted on this page with a revised effective date. We encourage you
+          to review this page periodically.
+        </p>
+      </section>
+
+      <div class="rule"><div class="rule-dot"></div></div>
+
+      <!-- §7 Contact -->
+      <div class="contact-block">
+        
+          <rect x="22" y="4" width="8" height="44" rx="1" fill="#d4a832" />
+          <rect x="4" y="22" width="44" height="8" rx="1" fill="#d4a832" />
+          <rect x="19" y="1" width="14" height="4" rx="1" fill="#d4a832" />
+          <rect x="1" y="19" width="4" height="14" rx="1" fill="#d4a832" />
+          <rect x="47" y="19" width="4" height="14" rx="1" fill="#d4a832" />
+          <rect x="19" y="47" width="14" height="4" rx="1" fill="#d4a832" />
+        </svg>
+        <h2>Contact the Developer</h2>
+        <p>
+          Questions or concerns about this Privacy Policy? Reach out directly.
+        </p>
+        <a href="mailto:mesaylema21@gmail.com">mesaylema21@gmail.com</a>
+      </div>
+    </main>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
+    <footer>
+      <span class="footer-name">መዝገበ ስብሐት</span>
+      &nbsp;·&nbsp; Privacy Policy &nbsp;·&nbsp; © 2026
+    </footer>
+  </body>
+</html>
