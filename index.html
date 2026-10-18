@@ -9,7 +9,6 @@
       rel="stylesheet"
     />
     <style>
-      /* ── Token System ─────────────────────────────────────────── */
       :root {
         --ink: #1a1209;
         --parchment: #f5efe0;
@@ -22,19 +21,8 @@
         --muted: #5c4a2a;
         --white: #fdfaf3;
       }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
       body {
         background: var(--parchment);
         color: var(--ink);
@@ -43,17 +31,7 @@
         line-height: 1.75;
         min-height: 100vh;
       }
-
-      /* ── Cross ornament (SVG inline) ──────────────────────────── */
-      .cross-ornament {
-        display: block;
-        margin: 0 auto;
-        width: 52px;
-        height: 52px;
-        opacity: 0.85;
-      }
-
-      /* ── Header ───────────────────────────────────────────────── */
+      .cross-ornament { display: block; margin: 0 auto; width: 52px; height: 52px; opacity: 0.85; }
       header {
         background: var(--crimson);
         color: var(--white);
@@ -62,39 +40,23 @@
         position: relative;
         overflow: hidden;
       }
-
-      /* Geometric border pattern at top and bottom of header */
-      header::before,
-      header::after {
+      header::before, header::after {
         content: "";
         display: block;
         position: absolute;
-        left: 0;
-        right: 0;
+        left: 0; right: 0;
         height: 8px;
         background: repeating-linear-gradient(
           90deg,
-          var(--gold) 0px,
-          var(--gold) 12px,
-          var(--crimson) 12px,
-          var(--crimson) 24px,
-          var(--gold-light) 24px,
-          var(--gold-light) 36px,
-          var(--crimson) 36px,
-          var(--crimson) 48px
+          var(--gold) 0px, var(--gold) 12px,
+          var(--crimson) 12px, var(--crimson) 24px,
+          var(--gold-light) 24px, var(--gold-light) 36px,
+          var(--crimson) 36px, var(--crimson) 48px
         );
       }
-      header::before {
-        top: 0;
-      }
-      header::after {
-        bottom: 0;
-      }
-
-      .header-cross {
-        margin-bottom: 1.25rem;
-      }
-
+      header::before { top: 0; }
+      header::after { bottom: 0; }
+      .header-cross { margin-bottom: 1.25rem; }
       .app-name-ge-ez {
         font-family: "Noto Serif Ethiopic", serif;
         font-size: clamp(2rem, 6vw, 3.5rem);
@@ -104,7 +66,6 @@
         line-height: 1.2;
         display: block;
       }
-
       .app-name-latin {
         font-family: "IM Fell English", serif;
         font-style: italic;
@@ -114,7 +75,6 @@
         display: block;
         margin-top: 0.35rem;
       }
-
       .page-title {
         font-family: "Cormorant Garamond", serif;
         font-weight: 300;
@@ -124,49 +84,21 @@
         color: var(--parchment);
         margin-top: 1.5rem;
       }
-
       .effective-date {
         font-size: 0.85rem;
         color: rgba(253, 250, 243, 0.55);
         margin-top: 0.5rem;
         letter-spacing: 0.08em;
       }
-
-      /* ── Layout ───────────────────────────────────────────────── */
-      main {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 3rem 1.5rem 5rem;
-      }
-
-      /* ── Gold rule divider ────────────────────────────────────── */
-      .rule {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin: 2.5rem 0;
-      }
-      .rule::before,
-      .rule::after {
+      main { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+      .rule { display: flex; align-items: center; gap: 0.75rem; margin: 2.5rem 0; }
+      .rule::before, .rule::after {
         content: "";
         flex: 1;
         height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          var(--rule),
-          transparent
-        );
+        background: linear-gradient(90deg, transparent, var(--rule), transparent);
       }
-      .rule-dot {
-        width: 6px;
-        height: 6px;
-        background: var(--gold);
-        border-radius: 50%;
-        flex-shrink: 0;
-      }
-
-      /* ── Intro block ──────────────────────────────────────────── */
+      .rule-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
       .intro {
         background: var(--white);
         border-left: 4px solid var(--gold);
@@ -177,20 +109,8 @@
         font-style: italic;
         line-height: 1.8;
       }
-
-      /* ── Sections ─────────────────────────────────────────────── */
-      section {
-        margin-bottom: 0;
-      }
-
-      .section-header {
-        display: flex;
-        align-items: baseline;
-        gap: 1rem;
-        margin-bottom: 0.75rem;
-        margin-top: 2.75rem;
-      }
-
+      section { margin-bottom: 0; }
+      .section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.75rem; margin-top: 2.75rem; }
       .section-number {
         font-family: "IM Fell English", serif;
         font-style: italic;
@@ -200,7 +120,6 @@
         white-space: nowrap;
         flex-shrink: 0;
       }
-
       h2 {
         font-family: "Cormorant Garamond", serif;
         font-weight: 600;
@@ -209,50 +128,12 @@
         letter-spacing: 0.02em;
         line-height: 1.3;
       }
-
-      p {
-        margin-bottom: 1rem;
-        font-size: 1rem;
-        color: #2e200a;
-      }
-
-      /* ── Highlight pill (replaces bold emphasis) ──────────────── */
-      strong {
-        color: var(--crimson);
-        font-weight: 600;
-      }
-
-      /* ── Bullet list ──────────────────────────────────────────── */
-      ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 0.75rem 0 1rem;
-      }
-
-      ul li {
-        display: flex;
-        gap: 0.75rem;
-        align-items: flex-start;
-        padding: 0.4rem 0;
-        font-size: 1rem;
-        color: #2e200a;
-      }
-
-      ul li::before {
-        content: "✦";
-        color: var(--gold);
-        font-size: 0.6rem;
-        margin-top: 0.45rem;
-        flex-shrink: 0;
-      }
-
-      /* ── Third-party cards ────────────────────────────────────── */
-      .service-grid {
-        display: grid;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
+      p { margin-bottom: 1rem; font-size: 1rem; color: #2e200a; }
+      strong { color: var(--crimson); font-weight: 600; }
+      ul { list-style: none; padding-left: 0; margin: 0.75rem 0 1rem; }
+      ul li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.4rem 0; font-size: 1rem; color: #2e200a; }
+      ul li::before { content: "✦"; color: var(--gold); font-size: 0.6rem; margin-top: 0.45rem; flex-shrink: 0; }
+      .service-grid { display: grid; gap: 1rem; margin-top: 1rem; }
       .service-card {
         background: var(--white);
         border: 1px solid var(--parchment2);
@@ -260,7 +141,6 @@
         border-radius: 6px;
         padding: 1.25rem 1.5rem;
       }
-
       .service-card h3 {
         font-family: "Cormorant Garamond", serif;
         font-weight: 600;
@@ -268,24 +148,9 @@
         color: var(--crimson);
         margin-bottom: 0.4rem;
       }
-
-      .service-card p {
-        font-size: 0.92rem;
-        color: var(--muted);
-        margin-bottom: 0.6rem;
-      }
-
-      .service-card a {
-        font-size: 0.85rem;
-        color: var(--gold);
-        text-underline-offset: 3px;
-        text-decoration: underline;
-      }
-      .service-card a:hover {
-        color: var(--crimson);
-      }
-
-      /* ── Contact block ────────────────────────────────────────── */
+      .service-card p { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.6rem; }
+      .service-card a { font-size: 0.85rem; color: var(--gold); text-underline-offset: 3px; text-decoration: underline; }
+      .service-card a:hover { color: var(--crimson); }
       .contact-block {
         background: var(--crimson);
         color: var(--parchment);
@@ -294,18 +159,8 @@
         text-align: center;
         margin-top: 3rem;
       }
-
-      .contact-block h2 {
-        color: var(--gold-light);
-        margin-bottom: 0.75rem;
-      }
-
-      .contact-block p {
-        color: rgba(245, 239, 224, 0.8);
-        margin-bottom: 0.5rem;
-        font-size: 0.95rem;
-      }
-
+      .contact-block h2 { color: var(--gold-light); margin-bottom: 0.75rem; }
+      .contact-block p { color: rgba(245, 239, 224, 0.8); margin-bottom: 0.5rem; font-size: 0.95rem; }
       .contact-block a {
         color: var(--gold-light);
         font-family: "Cormorant Garamond", serif;
@@ -315,12 +170,7 @@
         border-bottom: 1px solid var(--gold);
         padding-bottom: 1px;
       }
-      .contact-block a:hover {
-        color: white;
-        border-color: white;
-      }
-
-      /* ── Footer ───────────────────────────────────────────────── */
+      .contact-block a:hover { color: white; border-color: white; }
       footer {
         background: var(--ink);
         color: rgba(245, 239, 224, 0.45);
@@ -329,90 +179,34 @@
         font-size: 0.8rem;
         letter-spacing: 0.05em;
       }
-
-      footer .footer-name {
-        font-family: "Noto Serif Ethiopic", serif;
-        color: var(--gold);
-        margin-right: 0.4rem;
-      }
-
-      /* ── Responsive ───────────────────────────────────────────── */
-      @media (min-width: 560px) {
-        .service-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation: none !important;
-          transition: none !important;
-        }
-      }
+      footer .footer-name { font-family: "Noto Serif Ethiopic", serif; color: var(--gold); margin-right: 0.4rem; }
+      @media (min-width: 560px) { .service-grid { grid-template-columns: 1fr 1fr; } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
     </style>
   </head>
   <body>
-    <!-- ══ HEADER ══════════════════════════════════════════════════ -->
     <header>
       <div class="header-cross">
-       
+        <svg class="cross-ornament" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="22" y="4" width="8" height="44" rx="1" fill="#d4a832" />
           <rect x="4" y="22" width="44" height="8" rx="1" fill="#d4a832" />
           <rect x="19" y="1" width="14" height="4" rx="1" fill="#d4a832" />
           <rect x="1" y="19" width="4" height="14" rx="1" fill="#d4a832" />
           <rect x="47" y="19" width="4" height="14" rx="1" fill="#d4a832" />
           <rect x="19" y="47" width="14" height="4" rx="1" fill="#d4a832" />
-          <!-- corner diamonds -->
-          <rect
-            x="14"
-            y="14"
-            width="6"
-            height="6"
-            rx="1"
-            transform="rotate(45 17 17)"
-            fill="#d4a832"
-            opacity="0.7"
-          />
-          <rect
-            x="32"
-            y="14"
-            width="6"
-            height="6"
-            rx="1"
-            transform="rotate(45 35 17)"
-            fill="#d4a832"
-            opacity="0.7"
-          />
-          <rect
-            x="14"
-            y="32"
-            width="6"
-            height="6"
-            rx="1"
-            transform="rotate(45 17 35)"
-            fill="#d4a832"
-            opacity="0.7"
-          />
-          <rect
-            x="32"
-            y="32"
-            width="6"
-            height="6"
-            rx="1"
-            transform="rotate(45 35 35)"
-            fill="#d4a832"
-            opacity="0.7"
-          />
+          <rect x="14" y="14" width="6" height="6" rx="1" transform="rotate(45 17 17)" fill="#d4a832" opacity="0.7" />
+          <rect x="32" y="14" width="6" height="6" rx="1" transform="rotate(45 35 17)" fill="#d4a832" opacity="0.7" />
+          <rect x="14" y="32" width="6" height="6" rx="1" transform="rotate(45 17 35)" fill="#d4a832" opacity="0.7" />
+          <rect x="32" y="32" width="6" height="6" rx="1" transform="rotate(45 35 35)" fill="#d4a832" opacity="0.7" />
         </svg>
       </div>
 
       <span class="app-name-ge-ez">መዝገበ ስብሐት</span>
       <span class="app-name-latin">Mäzgäbä Sibḥat</span>
       <p class="page-title">Privacy Policy</p>
-      <p class="effective-date">Effective Date: April 13, 2026</p>
+      <p class="effective-date">Effective Date: October 18, 2026</p>
     </header>
 
-    <!-- ══ MAIN ════════════════════════════════════════════════════ -->
     <main>
       <div class="intro">
         Your privacy is important to us. This policy explains clearly and
@@ -423,7 +217,6 @@
 
       <div class="rule"><div class="rule-dot"></div></div>
 
-      <!-- §1 -->
       <section>
         <div class="section-header">
           <span class="section-number">§ 1</span>
@@ -434,11 +227,12 @@
           <strong>does not collect or store personal data</strong> such as your
           name, email address, or phone number. However, the App uses
           third-party services that may collect information used to identify you
-          and your device for advertising and analytics purposes.
+          and your device — such as your device's advertising identifier, IP
+          address, and device and app-usage information — for advertising,
+          ad mediation, and analytics purposes.
         </p>
       </section>
 
-      <!-- §2 -->
       <section>
         <div class="section-header">
           <span class="section-number">§ 2</span>
@@ -446,9 +240,8 @@
         </div>
         <p>
           The App
-          <strong
-            >does not access your photos or videos without your consent</strong
-          >. When you use features that require an image — such as reporting a
+          <strong>does not access your photos or videos without your consent</strong>.
+          When you use features that require an image — such as reporting a
           bug — the App uses the system picker exclusively.
         </p>
         <ul>
@@ -467,7 +260,6 @@
         </ul>
       </section>
 
-      <!-- §3 -->
       <section>
         <div class="section-header">
           <span class="section-number">§ 3</span>
@@ -490,7 +282,6 @@
         </ul>
       </section>
 
-      <!-- §4 -->
       <section>
         <div class="section-header">
           <span class="section-number">§ 4</span>
@@ -498,24 +289,54 @@
         </div>
         <p>
           The App uses third-party services that may collect data to display
-          advertisements and analyze app performance. These providers operate
-          under their own privacy policies.
+          advertisements, mediate between ad networks, and analyze app
+          performance. These providers operate under their own privacy
+          policies, which we encourage you to review.
         </p>
 
         <div class="service-grid">
           <div class="service-card">
-            <h3>Google AdMob</h3>
+            <h3>Meta Audience Network (Facebook)</h3>
             <p>
-              Displays advertisements. Google may use the
-              <strong>Advertising ID (AAID)</strong> from your device to
-              personalize ads and measure performance. You can manage your ad
-              preferences in your device settings.
+              Displays advertisements. Meta may use your device's
+              <strong>advertising identifier</strong> and other device and
+              usage information to deliver and personalize ads and to measure
+              their performance.
             </p>
             <a
-              href="https://support.google.com/admob/answer/6128543?hl=en"
+              href="https://www.facebook.com/privacy/policy/"
               target="_blank"
               rel="noopener"
-              >AdMob Privacy Policy ↗</a
+              >Meta Privacy Policy ↗</a
+            >
+          </div>
+          <div class="service-card">
+            <h3>Unity LevelPlay</h3>
+            <p>
+              An ad mediation platform that manages which ad networks serve ads
+              in the App. LevelPlay may collect the
+              <strong>advertising identifier</strong>, IP address, and device
+              information to run auctions and measure ad performance.
+            </p>
+            <a
+              href="https://unity.com/legal/privacy-policy"
+              target="_blank"
+              rel="noopener"
+              >Unity Privacy Policy ↗</a
+            >
+          </div>
+          <div class="service-card">
+            <h3>Unity Ads</h3>
+            <p>
+              Displays advertisements. Unity may use your
+              <strong>advertising identifier</strong> and device information to
+              personalize ads, prevent fraud, and measure performance.
+            </p>
+            <a
+              href="https://unity.com/legal/privacy-policy"
+              target="_blank"
+              rel="noopener"
+              >Unity Privacy Policy ↗</a
             >
           </div>
           <div class="service-card">
@@ -532,9 +353,14 @@
             >
           </div>
         </div>
+
+        <p style="margin-top: 1.25rem">
+          <strong>Your choices:</strong> You can reset your advertising ID or
+          opt out of ad personalization at any time in your Android device
+          settings (Settings → Privacy → Ads).
+        </p>
       </section>
 
-      <!-- §5 -->
       <section>
         <div class="section-header">
           <span class="section-number">§ 5</span>
@@ -548,7 +374,6 @@
         </p>
       </section>
 
-      <!-- §6 -->
       <section>
         <div class="section-header">
           <span class="section-number">§ 6</span>
@@ -563,9 +388,8 @@
 
       <div class="rule"><div class="rule-dot"></div></div>
 
-      <!-- §7 Contact -->
       <div class="contact-block">
-        
+        <svg class="cross-ornament" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-bottom: 0.75rem">
           <rect x="22" y="4" width="8" height="44" rx="1" fill="#d4a832" />
           <rect x="4" y="22" width="44" height="8" rx="1" fill="#d4a832" />
           <rect x="19" y="1" width="14" height="4" rx="1" fill="#d4a832" />
@@ -581,7 +405,6 @@
       </div>
     </main>
 
-    <!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
     <footer>
       <span class="footer-name">መዝገበ ስብሐት</span>
       &nbsp;·&nbsp; Privacy Policy &nbsp;·&nbsp; © 2026
